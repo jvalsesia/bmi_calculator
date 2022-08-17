@@ -66,8 +66,12 @@ class ResultPage extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  color: kBottomContainerColor,
-                  margin: const EdgeInsets.only(top: 10.0),
+                  //color: kBottomContainerColor,
+                  margin: const EdgeInsets.only(top: 15.0),
+                  decoration: BoxDecoration(
+                    color: kBottomContainerColor,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                   width: double.infinity,
                   height: kBottomContainerHeight,
                   child: const Center(

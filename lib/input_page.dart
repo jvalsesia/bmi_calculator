@@ -109,7 +109,7 @@ class _InputPageState extends State<InputPage> {
                             thumbColor: kBottomContainerColor,
                             overlayColor: kOverlayColor,
                             overlayShape: const RoundSliderOverlayShape(
-                              overlayRadius: 30.0,
+                              overlayRadius: 25.0,
                             ),
                             thumbShape: const RoundSliderThumbShape(
                                 enabledThumbRadius: 15.0),
@@ -230,13 +230,16 @@ class _InputPageState extends State<InputPage> {
             onTap: () {
               CalculatorBrain bmiCalculator =
                   CalculatorBrain(height: height, weight: weight);
+              String bmi = bmiCalculator.calculateBMI();
+              String bmiResult = bmiCalculator.getResult();
+              String bmiInteraction = bmiCalculator.getInterpretation();
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => ResultPage(
-                    bmiResult: bmiCalculator.getResult(),
-                    bmi: bmiCalculator.calculateBMI(),
-                    bmiInterpretation: bmiCalculator.getInterpretation(),
+                    bmiResult: bmiResult,
+                    bmi: bmi,
+                    bmiInterpretation: bmiInteraction,
                   ),
                 ),
               );
@@ -244,8 +247,12 @@ class _InputPageState extends State<InputPage> {
             child: Column(
               children: [
                 Container(
-                  color: kBottomContainerColor,
+                  //color: kBottomContainerColor,
                   margin: const EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                    color: kBottomContainerColor,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                   width: double.infinity,
                   height: kBottomContainerHeight,
                   child: const Center(

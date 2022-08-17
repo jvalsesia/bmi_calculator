@@ -7,7 +7,7 @@ const kBottomContainerHeight = 80.0;
 // 0xFFC3FE75
 // 0xFF8D8D90
 const Color kAppBackgroundColor = Color(0xFF000000);
-const Color kActiveCardColor = Color(0xFF1D1E33);
+const Color kActiveCardColor = Color(0x29C3FE75);
 const Color kInactiveCardColor = Color(0xFF111328);
 const Color kBottomContainerColor = Color(0xFFC3FE75);
 const Color kOverlayColor = Color(0x29C3FE75);
